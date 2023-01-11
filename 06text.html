@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 텍스트 관련 속성</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <style>
+        /* 텍스트 처리 : nowrap(줄바꿈무시) */
+        #space p { width: 200px; height: 100px;
+            border: 1px solid blue; padding: 20px;
+            margin: 150px 0 }
+        #space p:first-child { white-space: nowrap }
+        #space p:nth-child(2) { white-space: pre }
+        #space p:last-child { white-space: pre-wrap }
+
+        /* 텍스트 넘침 처리 : clip, ellipsis */
+        #overflow p { width: 200px; height: 100px;
+            border: 1px solid red; padding: 20px;
+            margin: 150px 0 }
+
+        #overflow p:first-child { overflow: hidden }
+            /* 넘친 텍스트가 사라짐 - 흔적은 남아 있음 */
+        #overflow p:nth-child(2) { overflow: hidden;
+            white-space: nowrap; text-overflow: ellipsis }
+            /* 넘친 텍스트가 사라짐 - 흔적을 말줄임 처리 */
+        #overflow p:last-child { overflow: hidden;
+            white-space: nowrap; text-overflow: clip }
+        /* 넘친 텍스트가 사라짐 - 흔적이 남아 있음 */
+
+        #shadow p { font-size: 50px; font-weight: bold }
+        #shadow p:first-child { text-shadow: 5px 5px 0 grey }
+        #shadow p:nth-child(2) {
+            text-shadow: 5px 5px 5px grey;
+            letter-spacing: 30px }
+        #shadow p:last-child {
+            text-shadow: -5px -5px 5px grey;
+            letter-spacing: 30px }
+
+    </style>
+</head>
+<body>
+    <title>CSS 고급 텍스트 관련 속성</title>
+    <h2>white-space</h2>
+    <p>텍스트의 공백, 들여쓰기, 줄바꿈에 대한 처리를 설정</p>
+
+    <div id="space">
+        <p>가을로 이네들은 별 언덕 하나에 이름과 봅니다.가을로 이네들은 별 언덕 하나에 이름과 봅니다.가을로 이네들은 별 언덕 하나에 이름과 봅니다.가을로 이네들은 별 언덕 하나에 이름과 봅니다.가을로 이네들은 별 언덕 하나에 이름과 봅니다.가을로 이네들은 별 언덕 하나에 이름과 봅니다.</p>
+        <p>가을로 이네들은 별 언덕 하나에 이름과 봅니다.가을로 이네들은 별 언덕 하나에 이름과 봅니다.가을로 이네들은 별 언덕 하나에 이름과 봅니다.가을로 이네들은 별 언덕 하나에 이름과 봅니다.가을로 이네들은 별 언덕 하나에 이름과 봅니다.가을로 이네들은 별 언덕 하나에 이름과 봅니다.</p>
+        <p>가을로 이네들은 별 언덕 하나에 이름과 봅니다.가을로 이네들은 별 언덕 하나에 이름과 봅니다.가을로 이네들은 별 언덕 하나에 이름과 봅니다.가을로 이네들은 별 언덕 하나에 이름과 봅니다.가을로 이네들은 별 언덕 하나에 이름과 봅니다.가을로 이네들은 별 언덕 하나에 이름과 봅니다.</p>
+    </div>
+
+    <h2>text-overflow</h2>
+    <p>특정 영역을 벗어나 줄바꿈이 되지 않은
+                텍스트에 대한 처리방법 설정</p>
+    <p>단, white-space와 overflow 속성과 함께 사용해야 함</p>
+
+    <div id="overflow">
+        <p>가을로 이네들은 별 언덕 하나에 이름과 봅니다.가을로 이네들은 별 언덕 하나에 이름과 봅니다.가을로 이네들은 별 언덕 하나에 이름과 봅니다.가을로 이네들은 별 언덕 하나에 이름과 봅니다.가을로 이네들은 별 언덕 하나에 이름과 봅니다.가을로 이네들은 별 언덕 하나에 이름과 봅니다.</p>
+        <p>가을로 이네들은 별 언덕 하나에 이름과 봅니다.가을로 이네들은 별 언덕 하나에 이름과 봅니다.가을로 이네들은 별 언덕 하나에 이름과 봅니다.가을로 이네들은 별 언덕 하나에 이름과 봅니다.가을로 이네들은 별 언덕 하나에 이름과 봅니다.가을로 이네들은 별 언덕 하나에 이름과 봅니다.</p>
+        <p>가을로 이네들은 별 언덕 하나에 이름과 봅니다.가을로 이네들은 별 언덕 하나에 이름과 봅니다.가을로 이네들은 별 언덕 하나에 이름과 봅니다.가을로 이네들은 별 언덕 하나에 이름과 봅니다.가을로 이네들은 별 언덕 하나에 이름과 봅니다.가을로 이네들은 별 언덕 하나에 이름과 봅니다.</p>
+    </div>
+
+    <h2>text-shadow</h2>
+    <p>CSS3에 추가된 기능</p>
+    <p>텍스트에 그림자 효과를 부여함</p>
+    <p>선택자 { 그림자수평오프셋 그림자수직오프셋 블로효과 그림자색상 }</p>
+
+    <div id="shadow">
+        <p>Infinity War</p>
+        <p>Quantumania</p>
+        <p>End Game</p>
+    </div>
+
+</body>
+</html>

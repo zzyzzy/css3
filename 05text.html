@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 텍스트 관련 속성</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <style>
+        #font p:first-child {
+            font-size: 35px; background: yellow; }
+        /* html 기본 폰트 크기 : 16px (0.42cm) */
+
+        /* font-family: 글꼴1, 대체글꼴1, ... */
+        #font p:nth-child(2) {
+            font-family: 궁서체1, 굴림체; font-size: 20px;
+            background: greenyellow; }
+
+        /* font-weight: bold 또는 normal */
+        #font p:nth-child(3) {
+            font-family: 궁서체; font-size: 20px;
+            background: aliceblue; font-weight: bold; }
+
+        /* font-style: italic 또는 normal */
+        #font p:nth-child(4) {
+            font-family: 돋움체; font-size: 20px;
+            background: cornsilk; font-style: italic; }
+
+        /* 단축표기 : 스타일 대소문자변환 굵기 크기 줄간격 글꼴 */
+        #font p:nth-child(5) {
+            font: italic bold 25px 궁서체;
+            background: cornsilk; }
+
+        /* 텍스트 줄간격 : 기본값 = 120% */
+        #line p { width: 50% }
+        #line p:first-child { line-height: 180% }
+        #line p:nth-child(2) { line-height: 100% }
+        #line p:last-child { line-height: 50% }
+
+        /* 글자간 간격 조정 */
+        #logo p:first-child { letter-spacing: 20px }
+        #logo p:nth-child(2) { letter-spacing: 20px }
+        #logo p:last-child { letter-spacing: -5px }
+
+        /* 단어간 간격 조정 */
+        #logo2 p:first-child { word-spacing: 20px }
+        #logo2 p:nth-child(2) { word-spacing: 20px }
+        #logo2 p:last-child { word-spacing: -5px }
+
+        /* 텍스트 수평정렬 : center, right, left */
+        #align p:first-child { text-align: right;
+                               border: 1px solid red }
+        #align p:nth-child(2) { text-align: center }
+        #align p:last-child { text-align: left }
+
+        /* 텍스트 꾸미기 : none, underline,
+                        overline, line-through */
+        #deco p:first-child { text-decoration: underline }
+        #deco p:nth-child(2) { text-decoration: overline }
+        #deco p:last-child { text-decoration: line-through }
+
+    </style>
+</head>
+<body>
+    <h1>CSS 텍스트 관련 속성</h1>
+    <h2>개요</h2>
+    <p>텍스트 크기, 글꼴 지정, 스타일, 텍스트의 정렬들을 다룸</p>
+
+    <h2>font-xxx 속성</h2>
+    <p>font-size : 텍스트의 크기 지정 </p>
+    <p>font-family : 텍스트의 글꼴 지정 </p>
+    <p>font-weight : 텍스트의 진하기 지정  </p>
+    <p>font-style : 텍스트의 스타일 지정 </p>
+    <p>font-xxx 텍스트 단축 표기 :
+        스타일 대소문자변환 굵기 크기 줄간격 글꼴</p>
+
+    <div id="font">
+        <p>노루, 묻힌 못 가득 차 별 당신은 때 이름자를 거외다.</p>
+        <p>마디씩 슬퍼하는 북간도에 아무 무엇인지 거외다.</p>
+        <p>마리아 라이너 별 별빛이 내 내 내린 별 소학교 거외다.</p>
+        <p>오면 토끼, 아스라히 언덕 하나에 까닭입니다.</p>
+        <p>없이 내 잠, 불러 강아지, 속의 아스라히 이름과, 있습니다.</p>
+    </div>
+
+    <h2>line-height</h2>
+    <p>텍스트의 줄간격 설정</p>
+
+    <div id="line">
+        <p>가을로 이네들은 별 언덕 하나에 이름과 봅니다.가을로 이네들은 별 언덕 하나에 이름과 봅니다.가을로 이네들은 별 언덕 하나에 이름과 봅니다.가을로 이네들은 별 언덕 하나에 이름과 봅니다.가을로 이네들은 별 언덕 하나에 이름과 봅니다.가을로 이네들은 별 언덕 하나에 이름과 봅니다.</p>
+        <p>마리아 라이너 별 별빛이 내 내 내린 별 소학교 거외다.마리아 라이너 별 별빛이 내 내 내린 별 소학교 거외다.마리아 라이너 별 별빛이 내 내 내린 별 소학교 거외다.마리아 라이너 별 별빛이 내 내 내린 별 소학교 거외다.마리아 라이너 별 별빛이 내 내 내린 별 소학교 거외다.마리아 라이너 별 별빛이 내 내 내린 별 소학교 거외다.</p>
+        <p>없이 내 잠, 불러 강아지, 속의 아스라히 이름과, 있습니다.없이 내 잠, 불러 강아지, 속의 아스라히 이름과, 있습니다.없이 내 잠, 불러 강아지, 속의 아스라히 이름과, 있습니다.없이 내 잠, 불러 강아지, 속의 아스라히 이름과, 있습니다.없이 내 잠, 불러 강아지, 속의 아스라히 이름과, 있습니다.없이 내 잠, 불러 강아지, 속의 아스라히 이름과, 있습니다.</p>
+    </div>
+
+    <h2>letter-spacing</h2>
+    <p>텍스트내 글자 사이 간격 조정</p>
+
+    <div id="logo">
+        <p>Marvel's Avengers : Infinity War</p>
+        <p>Ant-Man and The Wasp: Quantumania</p>
+        <p>Ant-Man and The Wasp: Quantumania</p>
+    </div>
+
+    <h2>word-spacing</h2>
+    <p>텍스트내 단어 사이 간격 조정</p>
+
+    <div id="logo2">
+        <p>Marvel's Avengers : End Game</p>
+        <p>Ant-Man and The Wasp: Quantumania</p>
+        <p>Ant-Man and The Wasp: Quantumania</p>
+    </div>
+
+    <h2>text-align</h2>
+    <p>텍스트의 수평방향 정렬 설정</p>
+
+    <div id="align">
+        <p>시간은 금이라구, 친구!</p>
+        <p>시간은 금이라구, 친구!</p>
+        <p>시간은 금이라구, 친구!</p>
+    </div>
+
+    <h2>text-decoration</h2>
+    <p>텍스트에 여러 가지 꾸민 효과를 부여/제거함</p>
+
+    <div id="deco">
+        <p>시간은 금이라구, 친구!</p>
+        <p>시간은 금이라구, 친구!</p>
+        <p>시간은 금이라구, 친구!</p>
+    </div>
+
+</body>
+</html>
