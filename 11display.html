@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS display 관련 속성</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <style>
+        /* span은 inline 요소이므로 width 적용 불가! */
+        /* span 요소 속성 변환 : inline-block */
+        #display p:first-child span { background: red;
+            color: white; font-weight: bold;
+            width: 100px; text-align: center;
+            display: inline-block }
+
+        /* display : 요소와 내용이 차지한 영역까지 지움 */
+        /* none -> block, inline */
+        #display p:nth-child(2) span { display: none }
+
+        /* visibility : 요소만 지우고 내용이 차지한 영역은 남김 */
+        /* hidden -> show */
+        #display p:last-child span { visibility: hidden }
+
+        /* 투명도 */
+        #opacity p { width: 150px; height: 150px; }
+
+        #opacity p:first-child { background: red; }
+        #opacity p:first-child:hover { opacity: 0.3 }
+
+        #opacity p:nth-child(2) { background: blue }
+        #opacity p:nth-child(2):hover { opacity: 0.7 }
+
+        #opacity p:last-child { background: black }
+        #opacity p:last-child:hover { opacity: 0 }
+    </style>
+</head>
+<body>
+    <h1>CSS display 관련 속성</h1>
+    <h2>개요</h2>
+    <p>html 요소가 브라우저에 의해 어떻게 보여질지 결정하는 속성</p>
+    <p>웹 페이지의 레이아웃을 정할때 자주 사용하는 속성</p>
+    <p>대부분의 html 요소는 block 또는 inline 중 하나로 결정되어
+        브라우저에 보여짐</p>
+    <p>하지만, 웹 페이지 레이아웃 구성시 요소의 속성을
+        바꿔야 할때가 존재하는데, 이때 display 속성으로 바꿀수 있음</p>
+
+    <div id="display">
+        <p>시간은 <span>금</span>이라구, 친구!</p>
+        <p>시간은 <span>금</span>이라구, 친구!</p>
+        <p>시간은 <span>금</span>이라구, 친구!</p>
+    </div>
+
+    <h2>visibility</h2>
+    <p>요소를 화면에서 표시할지 여부 지정</p>
+    <p>단, display 속성과는 다름</p>
+
+    <h2>opacity</h2>
+    <p>요소의 투명도를 지정. 값의 범위는 0 ~ 1 사이</p>
+
+    <div id="opacity">
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+    </div>
+
+</body>
+</html>
