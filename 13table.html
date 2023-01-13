@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 테이블 관련 속성</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        /* border-spacing 으로 테두리를 합칠 경우 두껍게 표시 */
+        table { width: 50%; border: 1px solid black;
+            /*border-spacing: 0;*/
+            border-collapse: collapse; }
+        .tb1 th, .tb1 td { border: 1px solid black;
+            padding: 10px; text-align: center }
+
+        /* 테이블 크기 고정 */
+        #tb2 { width: 300px; table-layout: fixed }
+        #tb2 td:first-child {  width: 30%; }
+        #tb2 td:last-child { overflow: hidden;
+            text-overflow: ellipsis }
+
+        /* 테이블 내용 수직 정렬 */
+        #tb3 { width: 500px; height: 300px; }
+        #tb3 td { border: 1px solid black }
+
+        #tb3 tr:first-child td { vertical-align: top }
+        #tb3 tr:nth-child(2) td { vertical-align: bottom }
+
+        #tb3 tr:last-child td { vertical-align: middle;
+            text-align: center }
+    </style>
+
+</head>
+<body>
+    <h1>CSS 테이블 관련 속성</h1>
+    <h2>개요</h2>
+    <p>테이터를 2차원의 표 형태로 나타내는데 사용</p>
+
+    <h2>border</h2>
+    <p>테이블의 테두리를 나타내는데 사용</p>
+    <p>border-collapse 속성으로 테이블의
+            테두리를 어떻게 표현할지 설정</p>
+    <p>border-spacing 속성으로 테이블의
+        테두리들의 간격을 설정</p>
+
+    <table class="tb1">
+        <tr><th>이름</th><th>국어</th><th>영어</th><th>수학</th></tr>
+        <tr><td>혜교</td><td>99</td><td>98</td><td>99</td></tr>
+        <tr><td>지현</td><td>54</td><td>77</td><td>87</td></tr>
+        <tr><td>수지</td><td>78</td><td>45</td><td>32</td></tr>
+    </table>
+
+    <h2>테이블 레이아웃</h2>
+    <p>테이블의 내용에 따라
+        테이블의 크기를 어떻게 나타낼 것인지 결정</p>
+    <p>셀의 크기보다 많은 내용을 포함시키면
+        테이블(해당 셀)의 크기가 늘어날 수 있음</p>
+    <p>이러한 상황을 방지하려면 table-layout 속성을 사용</p>
+    <p>테이블 크기를 고정시켰을때 넘쳐나는 내용은
+        overflow 속성으로 적절히 처리 가능</p>
+
+    <table id="tb2">
+        <tr><td>내용</td>
+            <td>123456789012345678901234567890123456789012345678901234567890</td></tr>
+    </table>
+
+    <h2>테이블 내용 정렬</h2>
+    <p>테이블 상의 내용을 위, 아래, 가운데로 정렬하고 싶으면
+        vertical-align 속성을 사용</p>
+
+    <table id="tb3">
+        <tr><td>1234567890</td><td>1234567890</td>
+            <td>1234567890</td></tr>
+        <tr><td>1234567890</td><td>1234567890</td>
+            <td>1234567890</td></tr>
+        <tr><td>1234567890</td><td>1234567890</td>
+            <td>1234567890</td></tr>
+    </table>
+
+</body>
+</html>
