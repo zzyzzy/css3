@@ -108,8 +108,37 @@
             -91px -45px;
         }
 
+        /* 그라디언트 */
+        #box17, #box18, #box19 {
+            width: 450px; height: 150px;
+            margin: 25px 0;
+        }
 
+        /* linear-gradient(방향, 색1, 색2, ...) */
+        #box17 { background:
+            linear-gradient(to right, blue, pink) }
 
+        #box18 { background:
+                linear-gradient(pink, blue) }
+
+        #box19 { background:
+            linear-gradient(to right, red, orange,
+            yellow, green, blue, navy, purple) }
+
+        #box20, #box21 {
+            width: 250px; height: 250px;
+            margin: 25px 0;
+        }
+
+        #box20 {
+            background: radial-gradient(red, yellow);
+        }
+
+        #box20 {
+            background: radial-gradient(
+                red, orange, yellow, green,
+                blue, navy, purple);
+        }
 
     </style>
 </head>
@@ -183,6 +212,17 @@
     <div id="box14">&nbsp;</div>
     <div id="box15">&nbsp;</div>
     <div id="box16">&nbsp;</div>
+
+    <h2>그라디언트</h2>
+    <p>두가지 이상의 색 간의 점진적 변화를 표현하는 기법</p>
+    <p>그라디언트의 종류는 선형, 방사형, 각진 원형등이 있음</p>
+
+    <div id="box17">&nbsp;</div>
+    <div id="box18">&nbsp;</div>
+    <div id="box19">&nbsp;</div>
+
+    <div id="box20">&nbsp;</div>
+    <div id="box21">&nbsp;</div>
 
 </body>
 </html>
