@@ -8,19 +8,19 @@
     <link rel="stylesheet" href="../css/main.css">
     <style>
         /* 너비 설정, 정중앙 배치, 테두리 표시 */
-        #container { border: 1px solid red;
+        #container { border: 2px solid black;
             width: 950px; margin: 0 auto; }
 
         /* 높이 지정, 테두리 표시 */
         /* header 안의 ul, div를 적절히 배치하기 위해 */
         /* position: relative 선언 */
-        header { border: 1px solid darkred;
+        header { /*border: 1px solid darkred;*/
            position: relative; height: 100px; }
 
         /* 배경색, 너비, 여백, 중앙 정렬 지정 */
         header h1 { background: #cccccc;
             width: 150px; text-align: center;
-            padding: 10px 0; }
+            padding: 20px 0; }
 
         /* 글머리기호 제거, 여백/마진 0으로 설정 */
         /* header의 위치를 기준으로 ul 배치하기 위해 */
@@ -43,7 +43,7 @@
                 top: 65px; left: 160px; }
 
         /* 테두리, 높이, 배경 지정 */
-        nav { border: 1px solid darkgreen;
+        nav { /*border: 1px solid darkgreen;*/
               height: 35px; background: #cccccc; }
 
         /* nav 공통 스타일 지정 */
@@ -63,9 +63,9 @@
             border: 1px solid black; margin-top: 3px }
 
         /* 테두리 표시 */
-        main { border: 1px solid darkviolet }
+        main { /*border: 1px solid darkviolet*/ }
 
-        section:first-child { border: 1px solid darkblue;
+        section:first-child { /*border: 1px solid darkblue;*/
             position: relative }
 
         /* 사이드메뉴 - 테두리, 너비 지정 */
@@ -102,7 +102,7 @@
             padding: 5px 10px; margin: 5px;}
 
         /* 상품목록 - 테두리 표시 */
-        section:last-child { border: 1px solid darkcyan }
+        section:last-child { /*border: 1px solid darkcyan*/ }
 
         /* 상품목록 배치 - 항목별로 왼쪽 마진 지정 */
         section:last-child ul { list-style: none;
@@ -117,6 +117,29 @@
         section:last-child ul a { display: block;
             text-align: center; }
 
+        /* 링크에 대한 스타일 지정 */
+        a:link { color: black; }
+        a:visited { color: black; }
+        a:hover { color: red; }
+        a:active { color: orange; }
+
+        /* 꼬릿글 영역 경계선 표시 */
+        footer { border-top: 1px solid black; }
+
+        /* 꼬릿글 : 블록요소 인라인요소로 변경, 수직정렬 지정 */
+        footer ul { list-style: none;
+                    display: inline-block;
+                    vertical-align: top; }
+
+        /* 첫번째 푸터 메뉴 마진 설정 */
+        /* 푸터 머릿글 마진 설정 */
+        footer ul:first-child { margin-left: 12px }
+        footer ul li:first-child h3 { margin: 0; }
+
+        /* 꼬릿글 */
+        footer div:last-child { text-align: center;
+            margin-top: 35px; border-top: 1px solid black;
+            padding: 7px }
 
     </style>
 </head>
