@@ -3,8 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>write</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/project2.css">
+    <style>
+        #writefrm { width: 560px; }
+    </style>
 </head>
 <body>
+<div id="wrapper">
 <header><h1>JSP 프로젝트 v1</h1></header>
 <nav>
   <ul>
@@ -16,10 +24,32 @@
   </ul>
   <hr>
 </nav>
-<main></main>
+<main>
+  <div id="main">
+    <h2>게시판 새글쓰기</h2>
+    <form name="write" id="writefrm">
+          <div><label for="title">제목</label>
+             <input type="text" name="title" id="title"></div>
+
+          <div><label for="uid">작성자</label>
+             <input type="text" name="uid" id="uid"
+                     value="siestageek" readonly></div>
+
+          <div><label for="contents" class="drgup">본문</label>
+              <textarea name="contents" id="contents"
+                        rows="7" cols="55"></textarea></div>
+
+          <div><label></label>
+            <button type="button">입력완료</button>
+            <button type="reset">다시입력</button>
+          </div>
+    </form>
+  </div>
+</main>
 <footer>
   <hr>
-  <div>copyright &copy; 2023. zzyzzy. All Rights Reserved.</div>
+  <div class="copy">copyright &copy; 2023. zzyzzy. All Rights Reserved.</div>
 </footer>
+</div>
 </body>
 </html>

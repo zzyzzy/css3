@@ -22,3 +22,6 @@ form label { display: inline-block; width: 110px;
         text-align: right; font-weight: bold }
 form input { padding: 5px }
 button { padding: 5px 7px }
+
+/* 새글쓰기, 본문보기 */
+.drgup { vertical-align: top }
