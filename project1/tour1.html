@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>한국여행</title>
+    <meta name="keywords" content="한국여행, 일본여행, 동남아, 미국, 하와이">
+    <meta name="description" content="1등 여행 전문사이트">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        #container { width: 1200px; margin: 0 auto;
+            border: 1px solid red; }
+
+        header { height: 100px; background: #cccccc; }
+        header h1 { margin: 0 } /* 헤더의 마진 제거 */
+
+        nav > ul { float: right; width: 800px;
+            background: black; color: white;
+            margin-top: -52px; margin-bottom: 0 }
+
+        nav > ul > li { display: inline-block;
+            padding: 15px 65px; font-weight: bold }
+
+        nav > ul ul { display: none }
+
+        .clearfix2:after {  content: "";
+            display: block; clear: both; }
+
+        .rotateimg {  }
+        .none { display: none; }
+
+        a:link { color: white; text-decoration: none;
+            font-weight: bold; position: relative }
+        .rotateimg a span { background: rgba(100,100,100, 0.5);
+            padding: 5px 15px; font-size: 20px;
+            position: absolute; top: 0; left: 480px; }
+
+        section:last-child { height: 200px }
+
+        .notice, .gallery, .golink { width: 395px; }
+        .notice h4, .gallery h4 { font-size: 20px;
+            border-bottom: 3px solid orange; margin: 10px 10px;
+            padding-bottom: 10px }
+        .notice { float: left; }
+        .notice table { width: 370px; margin: 0 10px;
+            border-collapse: collapse }
+        .notice td { padding: 5px 0 }
+        .notice td:last-child { text-align: right }
+        .notice tr:nth-child(even) { background: orange }
+
+        .gallery { float: left; }
+        .gallery ul { list-style: none; margin: 0 0 0 10px; padding: 0 }
+        .gallery ul li { display: inline-block; padding: 10px }
+
+        .golink { float: right; position: relative }
+        .golink img { margin: 10px 0 10px -5px }
+        .golink a span { background: rgba(100,100,100, 0.5);
+            padding: 5px 105px; font-size: 22px;
+            position: absolute; top: 0; left: 50px }
+
+        footer { height: 100px; background: #cccccc }
+        .copy { width: 600px; text-align: center;
+            float: left; font-size: 20px; line-height: 100px;
+            font-weight: bold }
+
+        .sns_site { float: right; margin: 5px 15px 0 0; }
+        .sns { list-style: none; margin: 0 0 0 10px; padding: 0; }
+        .sns li { display: inline-block; padding: 5px 10px }
+        .site { width: 250px }
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <header><h1>한국투어</h1></header>
+    <nav class="clearfix2">
+        <ul>
+            <li>해외여행
+                <ul>
+                    <li>동남아/대만</li>
+                    <li>중국/홍콩</li>
+                    <li>유럽/두바이</li>
+                    <li>미주/하와이</li>
+                </ul>
+            </li>
+            <li>국내여행
+                <ul>
+                    <li>서울/경기</li>
+                    <li>강원</li>
+                    <li>충청</li>
+                    <li>경상/전라</li>
+                </ul>
+            </li>
+            <li>제주도
+                <ul>
+                    <li>버스여행</li>
+                    <li>자유여행</li>
+                    <li>호텔/펜션</li>
+                </ul>
+            </li>
+            <li>렌터카
+                <ul>
+                    <li>국내 렌터카</li>
+                    <li>국외 렌터카</li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <main class="clearfix2">
+        <section class="rotateimg">
+            <div>
+                <a href="#">
+                    <img src="img/img1.jpg">
+                    <span>국내여행의 대표, 한국투어</span></a>
+
+                <a href="#" class="none">
+                    <img src="img/img2.jpg">
+                    <span>해외여행 예약, 한국투어</span></a>
+
+                <a href="#" class="none">
+                    <img src="img/img3.jpg">
+                    <span>편리한 렌터카, 한국투어</span></a>
+            </div>
+        </section>
+        <section>
+            <div class="notice">
+                <h4>공지사항</h4>
+                <table>
+                    <tr><td>한국투어 홈페이지 개편 안내</td>
+                        <td>2022.03.01</td></tr>
+                    <tr><td>여행 이벤트 상품을 드립니다.</td>
+                        <td>2022.03.01</td></tr>
+                    <tr><td>렌트카 이용시 주의해주세요.</td>
+                        <td>2022.03.01</td></tr>
+                    <tr><td>제주도 여행권 할인 안내</td>
+                        <td>2022.03.01</td></tr>
+                </table>
+            </div>
+            <div class="gallery">
+                <h4>갤러리</h4>
+                <ul>
+                    <li><img src="img/gallery1.jpg"></li>
+                    <li><img src="img/gallery2.jpg"></li>
+                    <li><img src="img/gallery3.jpg"></li>
+                </ul>
+            </div>
+            <div class="golink">
+                <a href="#">
+                    <img src="img/shortcut.jpg">
+                    <span>바로가기</span></a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="copy">Copyright &copy; by Webdesign. All Rights Reserved.</div>
+        <div class="sns_site">
+            <ul class="sns">
+                <li><img src="img/sns1.jpg"></li>
+                <li><img src="img/sns2.jpg"></li>
+                <li><img src="img/sns3.jpg"></li>
+            </ul>
+            <select name="sitelist" class="site">
+                <option>패밀리 사이트1</option>
+                <option>패밀리 사이트2</option>
+                <option>패밀리 사이트3</option>
+            </select>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
