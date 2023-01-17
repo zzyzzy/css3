@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 미디어 쿼리</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet"
+          media="screen and (min-width: 480px)"
+          href="css/smallone.css">
+    <style>
+        /*
+            @media (조건) { 적용할 스타일 }
+        */
+        @media (max-width: 750px) {
+            .smallone1 { background: yellow }
+        } /* 좁은 화면 스타일 */
+        @media (min-width: 750px) {
+            .largeone1 { color: red }
+        } /* 좁은 화면 스타일 */
+
+        /* 뷰포트 너비에 따라 배경색 변화 */
+        @media screen and (min-width: 480px) {
+            body { background: green }
+        }
+        @media screen and (min-width: 768px) {
+            body { background: orange }
+        }
+        @media screen and (min-width: 960px) {
+            body { background: yellow }
+        }
+        @media screen and (min-width: 1280px) {
+            body { background: #e4f7ba }
+        }
+
+        @media screen and (max-width: 1000px) {
+            .smallone2 { display: none; }
+        }
+
+        @media screen and (min-width: 600px) {
+            .largeone2 { display: none; }
+        }
+
+    </style>
+</head>
+<body>
+    <h1>CSS 미디어 쿼리</h1>
+    <h2>개요</h2>
+    <p>반응형responsive 웹 디자인은 중단점break point를 기준으로
+    웹 페이지 내 요소의 크기를 조정하거나 재구성하는데 적용하는
+    레이아웃</p>
+    <p>중단점은 특정 뷰포트의 너비(픽셀) 값이면서
+        웹 사이트의 레이아웃이 변경되도록 만드는 트리거 역할을 함</p>
+    <p>중단점 정의는 CSS 미디어쿼리를 이용해서 설정할 수 있음</p>
+
+    <img src="img/media.png">
+
+    <h2>적응형adaptive 웹 디자인</h2>
+    <p>모바일, 태블릿, 데스크탑 등 각각의 장치별로
+        독립적인 템플릿을 만들고 그에 맞는 별도의 레이아웃에
+        따라 웹 페이지를 디자인하는 방식</p>
+
+    <h2>미디어 쿼리</h2>
+    <p>다양한 장치에서도 웹 브라우징이 가능하게 되면서
+        뷰포트 너비에 따라 유연하게 컨텐츠를 배치하는 기술이 도입됨</p>
+    <p>미디어 쿼리는 단말기 유형, 화면해상도, 뷰포트 너비에 따라
+        웹사이트 스타일을 적용할 수 있게 해주는 기술</p>
+
+    <h3>좁거나 넓은 화면 스타일1</h3>
+    <div class="smallone1">좁은화면에서는 배경색이 바꿔요</div>
+    <div class="largeone1">넓은화면에서는 글자색이 바꿔요</div>
+
+    <h3>좁거나 넓은 화면 스타일2</h3>
+    <div class="smallone2">저는 넓은 화면에서만 보여요 (1000px이상)</div>
+    <div class="largeone2">저는 좁은 화면에서만 보여요 (600px이하)</div>
+
+</body>
+</html>
