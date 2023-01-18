@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>float layout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        /* 너비 설정, 정중앙 배치, 테두리 표시 */
+        #container { border: 2px solid black;
+            max-width: 950px; margin: 0 auto; }
+
+        /* 높이 지정, 테두리 표시 */
+        /* header 안의 ul, div를 적절히 배치하기 위해 */
+        header { height: 100px; display: flex;
+                    align-items: center }
+
+        /* 배경색, 너비, 여백, 중앙 정렬 지정 */
+        /* float: left 설정 */
+        header h1 { background: #cccccc;
+            width: 150px; text-align: center;
+            padding: 20px 0; float: left }
+
+        /* 글머리기호 제거, 여백/마진 0으로 설정 */
+        /* header의 위치를 기준으로 ul 배치하기 위해 */
+        .qmenu { list-style: none; padding: 20px 5px;
+            margin-left: auto; order: 2; margin-top: -45px; }
+
+        /* 리스트의 항목을 inline요소로 바꿈 */
+        .qmenu li { display:inline-block;  padding: 0 2px; }
+
+        /* li 요소 끝에 | 를 추가함 */
+        /* 단, 마지막 li 요소 끝에는 | 를 추가하지 않음 */
+        .qmenu li:after { content: ' |' }
+        .qmenu li:last-child:after { content: '' }
+
+        /* header의 위치를 기준으로 div 배치하기 위해 */
+        /* float: left */
+        header div { margin-left: 5px; order: 1;
+            margin-top: 55px }
+
+        /* 테두리, 높이, 배경 지정 */
+        nav { height: 35px; background: #cccccc;
+            display: flex; align-items: center }
+
+        /* nav 공통 스타일 지정 */
+        nav input, nav select, nav button { margin-right: 5px }
+
+        /* 입력 폼 테두리, 여백, 마진, 너비 지정 */
+        nav input { border: 1px solid black;
+             width: 290px; padding: 4px; }
+        /* 입력 폼 테두리, 여백, 마진, 너비 지정 */
+        nav select { border: 1px solid black;
+            width: 150px; padding: 2px; }
+        /* 배경, 글자색, 여백, 마진, 너비, 글꼴크기, 테두리 모서리 지정 */
+        nav button { background: #999999; color: white;
+            width: 150px; font-size: 18px; font-weight: bold;
+            border-radius: 5px; padding: 3px;
+            border: 1px solid black; }
+
+        /* 테두리 표시 */
+        main { /*border: 1px solid darkviolet*/ }
+
+        section:first-child { height: 280px;
+            display: flex; align-items: center }
+
+        /* 사이드메뉴 - 테두리, 너비 지정 */
+        /* aside, rotateimg 배치는 float을 이용 */
+        aside { width: 25%; margin-right: 5px }
+
+        /* ul의 테두리는 두껍게 표시 */
+        aside ul { list-style: none; height: 275px;
+            padding: 0; margin: 0; border: 2px solid black; }
+        /* ul의 li는 아래쪽 테두리만 그림, 여백 설정 */
+        aside li {
+            border-bottom: 1px solid black; padding: 8px 10px; }
+        /* ul의 마지막 li는 테두리 없음 */
+        aside li:last-child {
+            border: none
+        }
+
+        /* 로테이트 이미지 - 테두리, 너비, 배치 위치, 높이 지정 */
+        /* float: right로 배치 */
+        .rotateimg { border: 2px solid black;
+            width: 74%; height: 275px; display: flex;
+                align-items: center; justify-content: center;
+                flex-direction: column }
+
+        /* 로테이트 텍스트 - 배치 위치 지정 */
+        .rotateimg p { line-height: 125px; margin-top: 55px; }
+
+        /* 버튼들 - 버튼 배치위치 지정 */
+        /* 버튼요소 - 버튼 배경색, 여백, 마진 지정 */
+        .rotateimg ul { list-style: none; padding: 0;
+            margin: 0 10px 0 auto; }
+        .rotateimg ul li {
+            display: inline-block; background: #cccccc;
+            padding: 5px 10px; margin: 5px;}
+
+        /* 두번째 section 영역 높이 지정 */
+        section:last-child { height: 235px }
+
+        /* 상품목록 - 테두리 표시 */
+        .products {  }
+
+        /* 상품목록 배치 - 항목별로 왼쪽 마진 지정 */
+        .products ul { list-style: none;
+            padding: 0; margin: 30px 0; display: flex;
+            justify-content: space-evenly }
+        .products ul li { display: inline-block; }
+
+        /* 상품 링크 - 이미지 크기, 배경 지정 */
+        /* 인라인 요소를 블록요소로 변경 */
+        .pimg { width: 100px; height: 100px;
+            background: #cccccc; border-radius: 7px; }
+        .products ul a { display: block; text-align: center; }
+
+        /* 링크에 대한 스타일 지정 */
+        a:link { color: black; }
+        a:visited { color: black; }
+        a:hover { color: red; }
+        a:active { color: orange; }
+
+        /* 꼬릿글 영역 경계선 표시 */
+        footer { border-top: 1px solid black; }
+        footer div { display: flex }
+
+        /* 꼬릿글 : 블록요소 인라인요소로 변경, 수직정렬 지정 */
+        footer ul { list-style: none; }
+
+        /* 첫번째 푸터 메뉴 마진 설정 */
+        /* 푸터 머릿글 마진 설정 */
+        footer ul:first-child { }
+        footer ul li:first-child h3 { margin: 0; }
+
+        /* 꼬릿글 */
+        footer div:last-child { display: flex; justify-content: center;
+            margin-top: 35px; border-top: 1px solid black;
+            padding: 7px }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h1>로고</h1>
+            <ul class="qmenu">
+                <li>contact</li>
+                <li>store locator</li>
+                <li>support</li>
+                <li>CART</li>
+            </ul>
+            <div><a href="#">Log in</a> or
+                <a href="#">Create Account</a></div>
+        </header>
+        <nav class="clear">
+            <input type="text" name="search">
+            <select name="category">
+                <option>Category</option>
+                <option>Category</option>
+                <option>Category</option>
+                <option>Category</option>
+            </select>
+            <button type="button">search</button>
+        </nav>
+        <main>
+            <section>
+                <aside>
+                    <ul>
+                        <li>All Categories</li>
+                        <li>Category1</li>
+                        <li>Category2</li>
+                        <li>Category3</li>
+                        <li>Category4</li>
+                        <li>Category5</li>
+                        <li>Category6</li>
+                    </ul>
+                </aside>
+                <div class="rotateimg">
+                    <p>[PROMOTIONAL IMAGES ROTATE HERE]</p>
+                    <ul><li>1</li><li>2</li><li>3</li><li>4</li></ul>
+                </div>
+            </section>
+            <section class="products clear">
+                <div>
+                    <h2>Today's Specials</h2>
+                    <ul><li><div class="pimg"></div>
+                            <a href="#">Product1</a></li>
+                        <li><div class="pimg"></div>
+                            <a href="#">Product2</a></li>
+                        <li><div class="pimg"></div>
+                            <a href="#">Product3</a></li>
+                        <li><div class="pimg"></div>
+                            <a href="#">Product4</a></li>
+                        <li><div class="pimg"></div>
+                            <a href="#">Product5</a></li>
+                        <li><div class="pimg"></div>
+                            <a href="#">Product6</a></li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+        <footer class="clear">
+            <div>
+                <ul>
+                    <li><h3>ABOUT US</h3></li>
+                    <li>Company</li>
+                    <li>News</li>
+                    <li>Jobs</li>
+                    <li>Policies</li>
+                    <li>Contact</li>
+                </ul>
+                <ul>
+                    <li><h3>SOCIAL</h3></li>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>Try our app</li>
+                </ul>
+                <ul>
+                    <li><h3>SERVICE</h3></li>
+                    <li>FAQ</li>
+                    <li>Live support</li>
+                    <li>Site map</li>
+                </ul>
+            </div>
+            <div class="clear">Copyright &copy; 2023. All Right Reserved.</div>
+        </footer>
+    </div>
+</body>
+</html>
