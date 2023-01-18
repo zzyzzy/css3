@@ -31,6 +31,63 @@
         .last-item { margin-left: auto;
                     /*margin-right: auto;*/ }
 
+        .container1 { background: indigo;
+                height: 200px; width: 100%;
+                display: flex; align-items: center;
+                justify-content: space-evenly }
+        .item2 { background: #34005b;
+                height: 100px; width: 200px;
+                color: white }
+
+        .container2 { background: indigo;
+            display: flex; flex-direction: column;}
+
+        .item3 { padding: 16px; min-height: 100px;
+            display: flex; align-items: center }
+
+        header { background-color: #105b63; order: 1 }
+        main { background-color: #fffad5; order: 2 }
+        aside { background-color: #ffd34e; order: 3 }
+        aside.aside-two { background-color: #db9e36; order: 4 }
+        footer { background-color: #bd4932; order: 5 }
+
+        .container3 { background: indigo;
+            height: 100px; width: 100%;
+            display: flex;
+            align-items: center; }
+
+        /* width : 고정크기, 내용이 많으면 자동 줄바꿈 */
+        /* flex-basis : 가변크기, 내용이 많으면 자동 크기 연장 */
+        /* flex-grow: 기본적으로는 항목의 제외한 나머지
+                공간(여백)을 기준으로 항목의 너비를 비율로 표시 */
+        /* flex-shrink: 항목의 내용을 기준으로 항목의 너비를 비율로 표시 */
+        /* 단, flex-grow, flex-shrink 속성은
+                        flex-basis 속성에 영향을 받기도 함 */
+        /* basis, grow, shrink 등은 축약형으로도 작성 가능
+            - 순서는 grow, shrink, basis로 정의해야 함*/
+        .item4 { background: #34005b;
+            height: 80px; /*width: 200px;*/ margin: 5px;
+            color: white; /*flex-basis: 200px;*/
+            /*flex-grow: 1*/ /*flex-shrink: 1*/
+            flex: 1 200px }
+
+        /* basis, grow, shrink 이용해서
+            holy grail layout 적용하기 */
+        /* flex-wrap : 항목이 뷰포트를
+                    벗어날때overflow의 처리 */
+        /* direction과 wrap을 축약으로 사용가능
+           : flex-flow 배치방향 줄바꿈 */
+        .container4 { background: indigo;
+            display: flex; /*flex-direction: row;
+            flex-wrap: wrap;*/
+            flex-flow: row wrap }
+
+        .hdr { flex: 0 0 100%; order: 1 }
+        .ftr { flex: 0 0 100%; order: 5 }
+        .asd1 { flex: 0 0 150px; order: 2 }
+        .main { flex: 1 0 auto; order: 3 }
+        .asd2 { flex: 0 0 150px; order: 4 }
+
     </style>
 </head>
 <body>
@@ -69,6 +126,56 @@
         <a href="#" class="item">Policy</a>
         <a href="#" class="last-item">Contact Us</a>
     </header>
+
+    <h2>flex item 배치하기</h2>
+    <p>flex 컨테이너 내에 포함된 항목들을 일정 간격으로 배치하려면
+       justify-content 속성을 사용</p>
+     <p>space-between : 항목들 사이에 일정한 간격으로 배치</p>
+     <p>space-around : 항목들 주위에 일정한 간격으로 배치 </p>
+     <p>space-evenly : 항목들 양끝에 일정한 간격으로 배치 </p>
+
+    <div class="container1">
+        <div class="item2">Item One</div>
+        <div class="item2">Item Two</div>
+        <div class="item2">Item Three</div>
+    </div>
+
+    <h2>항목 순서 지정하기</h2>
+    <p>각 항목들의 시각적 나열 순서를 결정할때는
+        order 라는 속성 이용</p>
+    <p>숫자값이 낮을수록 앞(먼저)에 배치되고
+        크면 뒤(나중)에 배치됨</p>
+
+    <div class="container2">
+        <!--<header class="item3">Header</header>
+            <aside class="item3">Side one</aside>
+            <main class="item3">Content</main>
+            <aside class="item3 aside-two">Side Two</aside>
+            <footer class="item3">Footer</footer>-->
+
+        <aside class="item3">Side one</aside>
+        <aside class="item3 aside-two">Side Two</aside>
+        <main class="item3">Content</main>
+        <footer class="item3">Footer</footer>
+        <header class="item3">Header</header>
+    </div>
+
+    <h2>항목들 크기 자유자제로 다루기</h2>
+
+    <div class="container3">
+        <div class="item4">Item One</div>
+        <div class="item4">Item TwoTwoTwoTwoTwoTwoTwo</div>
+        <div class="item4">Item Three</div>
+    </div>
+
+    <h2>grow, basis 적용하기</h2>
+    <div class="container4">
+        <header class="item3 hdr">Header</header>
+        <aside class="item3 asd1">Side one</aside>
+        <main class="item3 main">Content</main>
+        <aside class="item3 asd2">Side Two</aside>
+        <footer class="item3 ftr">Footer</footer>
+    </div>
 
 </body>
 </html>
