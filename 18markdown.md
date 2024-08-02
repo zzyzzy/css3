@@ -148,8 +148,8 @@ a<sup>2</sup> = b<sup>2</sup> + c<sup>2</sup><br>
 * 온라인에서 간단히 LaTeX 문법을 확인하고 싶다면 
    https://editor.codecogs.com 를 참고함
 ---
-$a^2 = b^2 + c^2$<br>
-$$x = {-b \pm \sqrt {b^2 - 4ac} \over 2a}$$
+$ a^2 = b^2 + c^2 $<br>
+$$ x = {-b \pm \sqrt {b^2 - 4ac} \over 2a} $$
 
 
 
